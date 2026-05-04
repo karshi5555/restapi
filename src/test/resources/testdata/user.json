@@ -1,0 +1,6 @@
+{
+	"name": "Karim",
+	"email": "${email}",
+	"gender": "male",
+	"status": "active"
+}

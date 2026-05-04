@@ -1,0 +1,8 @@
+<suite name="NNH">
+	<test name="asfasf">
+		<classes>
+			<class name="hyd.testcasesJson" />
+
+		</classes>
+	</test>
+</suite>

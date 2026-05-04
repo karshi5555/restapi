@@ -1,0 +1,96 @@
+{
+	"getUsers": {
+		"Description": "get me all users",
+		"BaseUri": "https://gorest.co.in/public/v2/",
+		"Methodname": "GET",
+		"resourcepath": "users",
+		"ExpectedStatus": 200
+	},
+	"getUser": {
+		"Description": "get me specific user",
+		"BaseUri": "https://gorest.co.in/public/v2/",
+		"pathparam": {
+			"userId": 8452647
+		},
+		"methodname": "GET",
+		"resourcepath": "users/{userId}",
+		"ExpectedStatus": 200,
+		"ResponseData": {
+			"id": 8452647,
+			"name": "Mr. Harinakshi Kapoor",
+			"gender": "female"
+		}
+	},
+	"CreateUser": {
+		"Description": "create new user",
+		"BaseUri": "https://gorest.co.in/public/v2/",
+		"Headers": {
+			"Authorization": "Bearer c9e9392c7c918944ba21289fb78a1cebc999e9b21971603eb312cbd5e71424ee",
+			"Content-Type": "application/json"
+		},
+		"methodname": "POST",
+		"resourcepath": "users",
+		"body": "user.json",
+		"ExpectedStatus": 201,
+		"ContentType": "application/json",
+		"ResponseData": {
+			"name": "Karim",
+			"gender": "male",
+			"status": "active"
+		}
+	},
+	"UpdateUser": {
+		"Description": "update the user email",
+		"BaseUri": "https://gorest.co.in/public/v2/",
+		"Headers": {
+			"Authorization": "Bearer c9e9392c7c918944ba21289fb78a1cebc999e9b21971603eb312cbd5e71424ee",
+			"Content-Type": "application/json"
+		},
+		"pathparam": {
+			"userId": 8450522
+		},
+		"ContentType": "application/json",
+		"methodname": "PUT",
+		"resourcepath": "users/{userId}",
+		"body": "user.json",
+		"ExpectedStatus": 200,
+		"ResponseData": {
+			"gender": "male",
+			"status": "active"
+		}
+	},
+	"DeleteUser": {
+		"Description": "delete the user",
+		"BaseUri": "https://gorest.co.in/public/v2/",
+		"Headers": {
+			"Content-Type": "application/json"
+		},
+		"pathparam": {
+			"userId": 8452654
+		},
+		"methodname": "DELETE",
+		"resourcepath": "users/{userId}",
+		"ExpectedStatus": 200
+	},
+	"AddXml": {
+		"Description": "add two numbers",
+		"BaseUri": "http://www.dneonline.com/",
+		"methodname": "POST",
+		"body": "NewFile.xml",
+		"ExpectedStatus": 200,
+		"Headers": {
+					"Content-Type": "text/xml; charset=utf-8"
+				},
+		"resourcepath": "calculator.asmx",
+		"QueryParamter": {
+					"op": "Add"
+				},
+		"Dynamicdata": {
+            "intA": 12,
+            "intB": 24
+        },
+		"ResponseData": {
+			"Envelope.Body.AddResponse.AddResult": 36
+		}
+	}
+}
